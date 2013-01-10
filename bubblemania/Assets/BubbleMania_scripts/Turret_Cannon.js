@@ -21,14 +21,17 @@ function Start () {
 
 function Update () {
 	if(myTarget){
-		if(Time.time >= nextMoveTime){
-			CalculateAimPosition(myTarget.position);
-			turretBall.rotation=Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime*turnSpeed);
-		}
-		
 		if(Time.time>=nextFireTime){
 			FireProjectile();
 		}
+		if(Time.time >= nextMoveTime){
+			CalculateAimPosition(myTarget.position);
+			turretBall.rotation=Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime*turnSpeed);
+			//turretBall.transform.LookAt(myTarget);
+		}
+		
+		
+		
 	}
 
 }
@@ -38,18 +41,20 @@ function OnTriggerEnter(other : Collider){
 		myTarget=other.gameObject.transform;
 	}
 }
+//Izbrisemo tarco, ko gre element iz obsega
 function OnTriggerExit(other : Collider){
 	if(other.gameObject.transform == myTarget){
 		myTarget=null;
 	}
 
 }
-function CalculateAimPosition(targetPos : Vector3){
-	//Dodamo moznost napake
-	var aimPoint = Vector3(targetPos.x + aimError, targetPos.y+aimError, targetPos.z+aimError);
-	//var aimPoint = Vector3(targetPos.x, targetPos.y, targetPos.z);
-	desiredRotation=Quaternion.LookRotation(aimPoint);
+function CalculateAimPosition(targetPos : Vector3)
+{
+	//Upostevamo da stolp lahko slabo meri
+	var aimPoint = Vector3(targetPos.x-transform.position.x+aimError, targetPos.y-transform.position.y+aimError, targetPos.z-transform.position.z+aimError);
+	desiredRotation = Quaternion.LookRotation(aimPoint);
 }
+//Moznost slabega merjenja stolpa
 function CalculateAimError(){
 	aimError=Random.Range(-errorAmount, errorAmount);
 }

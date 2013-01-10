@@ -13,7 +13,7 @@ public class FinishedBubble : MonoBehaviour {
 	
 	}
 	void OnCollisionExit(Collision trk){
-		Debug.Log ("hit");
+		Debug.Log ("hit232");
 		if(trk.gameObject.tag=="bubble")
 			Destroy(trk.gameObject);
 		if(this.gameObject.tag=="projectile")

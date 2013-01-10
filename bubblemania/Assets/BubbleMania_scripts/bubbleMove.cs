@@ -14,7 +14,7 @@ public class bubbleMove : MonoBehaviour {
        MovementSpeed = 5;
 
       //Here i'm telling to the owner of this script to wall by the path created with the name "EnemyPath1" 
-		iTween.MoveTo(this.gameObject,iTween.Hash("path",iTweenPath.GetPath("bubblesPath"),"time",timeOnPath));
+		iTween.MoveTo(this.gameObject,iTween.Hash("path",iTweenPath.GetPath("bubblesPath"),"speed",timeOnPath));
     }
 	
 	 void Update () {
