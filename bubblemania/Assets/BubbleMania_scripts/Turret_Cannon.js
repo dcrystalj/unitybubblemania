@@ -21,13 +21,15 @@ function Start () {
 
 function Update () {
 	if(myTarget){
+		//turretBall.transform.LookAt(myTarget);
 		if(Time.time>=nextFireTime){
+			
 			FireProjectile();
 		}
 		if(Time.time >= nextMoveTime){
 			CalculateAimPosition(myTarget.position);
 			turretBall.rotation=Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime*turnSpeed);
-			//turretBall.transform.LookAt(myTarget);
+			
 		}
 		
 		
