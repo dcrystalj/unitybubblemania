@@ -51,6 +51,10 @@
      <Compile Include="Assets\BubbleMania_scripts\autoDestroyParticles.js" />
      <Compile Include="Assets\BubbleMania_scripts\bubbleOnDestroy.js" />
      <Compile Include="Assets\BubbleMania_scripts\flyingCamera.js" />
+     <Compile Include="Assets\BubbleMania_scripts\main\GameC.js" />
+     <Compile Include="Assets\BubbleMania_scripts\main\GameText.js" />
+     <Compile Include="Assets\BubbleMania_scripts\menu\gameOverMenu.js" />
+     <Compile Include="Assets\BubbleMania_scripts\menu\mainMenu.js" />
      <Compile Include="Assets\BubbleMania_scripts\projectRocker.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />

@@ -49,10 +49,6 @@
      <Compile Include="Assets\BubbleMania_scripts\SplineController\SplineController.cs" />
      <Compile Include="Assets\BubbleMania_scripts\SplineController\SplineInterpolator.cs" />
      <Compile Include="Assets\BubbleMania_scripts\bubbleMove.cs" />
-     <Compile Include="Assets\BubbleMania_scripts\main\GameC.cs" />
-     <Compile Include="Assets\BubbleMania_scripts\main\GameText.cs" />
-     <Compile Include="Assets\BubbleMania_scripts\menu\gameOverMenu.cs" />
-     <Compile Include="Assets\BubbleMania_scripts\menu\mainMenu.cs" />
      <Compile Include="Assets\class\Game.cs" />
      <Compile Include="Assets\iTweenEditor\Examples\StartAndStopTween.cs" />
      <Compile Include="Assets\iTweenEditor\Helper Classes\EventParamMappings.cs" />
