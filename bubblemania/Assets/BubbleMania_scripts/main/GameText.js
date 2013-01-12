@@ -30,9 +30,24 @@
 			}
 		}
 		//buy towers mode
-		if(GameC.gameState == 2){ 
+		else if(GameC.gameState == 2){ 
 			if(GUI.Button( Rect(Screen.width/2-50,Screen.height-50,100,50),"finish")){
 				GameC.gameState=1;
 			}
 		}
+
+		else if (GameC.gameState == 3){
+
+			style.fontSize =40;
+			GUI.Label(Rect(Screen.width/2-100,Screen.height/5,500,500),"Game Over",style);
+
+			if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2-50,100,50),"Restart game")){
+				GameC.reset();
+
+			}
+			if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2,100,50),"Quit")){
+				Application.Quit();
+			}
+		}
+
 	}
