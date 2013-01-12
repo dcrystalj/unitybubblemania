@@ -49,7 +49,9 @@
      <Compile Include="Assets\BubbleMania_scripts\RailGun.js" />
      <Compile Include="Assets\BubbleMania_scripts\Turret_Cannon.js" />
      <Compile Include="Assets\BubbleMania_scripts\autoDestroyParticles.js" />
+     <Compile Include="Assets\BubbleMania_scripts\bubbleOnDestroy.js" />
      <Compile Include="Assets\BubbleMania_scripts\flyingCamera.js" />
+     <Compile Include="Assets\BubbleMania_scripts\projectRocker.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />

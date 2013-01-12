@@ -14,13 +14,16 @@ private var nextFireTime:float;
 private var nextMoveTime:float;
 private var desiredRotation : Quaternion;
 private var aimError:float;
-
+private var sphereCollider : SphereCollider; 
 function Start () {
-
+	//sphereCollider= this.gameObject.GetComponent(SphereCollider);
 }
 
 function Update () {
+	//var object = this.gameObject;
+	//Handles.DrawWireDisc( gameObject.transform.position, Camera.mainCamera.transform.forward, sphereCollider.radius );
 	if(myTarget){
+		
 		//turretBall.transform.LookAt(myTarget);
 		if(Time.time>=nextFireTime){
 			
