@@ -34,6 +34,9 @@
 			if(GUI.Button( Rect(Screen.width/2-50,Screen.height-50,100,50),"finish")){
 				GameC.gameState=1;
 			}
+			if(GUI.Button( Rect(Screen.width-50,Screen.height/2-50,100,50),"tower1")){
+				
+			}
 		}
 
 		else if (GameC.gameState == 3){

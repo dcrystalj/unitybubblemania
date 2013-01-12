@@ -7,7 +7,7 @@
 
 	}
 	function OnGUI(){
-		if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2-50,100,50),"Restart Game")){
+		if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2-50,100,50),"Start Game")){
 			Application.LoadLevel("unity");
 		}
 		if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2,100,50),"Quit")){
