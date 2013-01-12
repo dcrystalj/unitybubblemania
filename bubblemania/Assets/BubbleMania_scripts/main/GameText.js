@@ -12,7 +12,7 @@
 		GUI.Label(Rect(10,70,250,250),"popped baloons: "+GameC.popped);
 
 		//develop vars
-		GUI.Label(Rect(10,1,600,250)," enemies "+GameC.enemies +" spawnInterval "+GameC.spawnInterval+" bubblesInGame "+GameC.bubblesInGame+" areAllCreated "+GameC.areAllCreated+" gameState "+GameC.gameState);		
+		GUI.Label(Rect(10,90,600,250),"enemies "+GameC.enemies +" spawnInterval "+GameC.spawnInterval+" bubblesInGame "+GameC.bubblesInGame+" areAllCreated "+GameC.areAllCreated+" gameState "+GameC.gameState);		
 
 		//Show buy menu
 		if (GameC.gameState == 1){
@@ -28,7 +28,6 @@
 			if(GUI.Button( Rect(Screen.width/2-50,Screen.height/2,100,50),"Buy towers")){
 				GameC.gameState=2;
 			}
-
 		}
 		//buy towers mode
 		if(GameC.gameState == 2){ 

@@ -1,4 +1,6 @@
 
+	public static var spawn : GameObject;
+
 	public static var money : int;
 	public static var lvl : int;
 	public static var lives  : int;
@@ -13,6 +15,7 @@
 
 	// Use this for initialization
 	function Start () {
+
 		reset();	
 		//GameC.gameState=1;
 	}
@@ -22,7 +25,9 @@
 	//check when all bubbles are created and destroyed
 	function Update () {
 		if(areAllCreated && bubblesInGame==0){
+			areAllCreated = false;
 			GameC.gameState=1;
+			spawn=null;
 		}
 	}
 	
@@ -35,13 +40,15 @@
 		popped = 0;
 		enemies = 10;
 		spawnInterval = 1;
+		spawn = GameObject.Instantiate( Resources.LoadAssetAtPath("Assets/BubbleMania_Objects/Spawn.prefab", typeof(GameObject)) ) as GameObject;
 
-		//Instantiate (yourCreature, Vector3(95.32924,0,365), Quaternion.identity);  TODO: create spawn here
+
 	}
 
 	public static function nextLevel(){
 		lvl++;
 		lives++;
 		enemies += 10;	
-		spawnInterval *= 1.1;
+		spawnInterval /= 1.5;
+		spawn = GameObject.Instantiate( Resources.LoadAssetAtPath("Assets/BubbleMania_Objects/Spawn.prefab", typeof(GameObject)) ) as GameObject;
 	}
