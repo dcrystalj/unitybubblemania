@@ -29,8 +29,9 @@ function Update () {
 		aim_Pan.eulerAngles = Vector3(0,aim_Pan.eulerAngles.y,0);
 		aim_Tilt.LookAt(myTarget);
 
-		towerCamera.LookAt(myTarget);
-		
+		if(towerCamera!=null){
+			towerCamera.LookAt(myTarget);
+		}
 		pivot_Pan.rotation = Quaternion.Lerp(pivot_Pan.rotation,aim_Pan.rotation,Time.deltaTime*turnSpeed);
 		pivot_Tilt.rotation = Quaternion.Lerp(pivot_Tilt.rotation,aim_Tilt.rotation,Time.deltaTime*turnSpeed);
 		

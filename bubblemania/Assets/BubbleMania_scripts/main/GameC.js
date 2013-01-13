@@ -1,5 +1,5 @@
 
-	public static var spawn : GameObject;
+public static var spawn : GameObject;
 	public var cameras : Camera[]; //0-main camera, 1-buy camera, 2-follow first baloon camera
 
 	public static var money : int;
@@ -34,15 +34,27 @@
 			spawn=null;
 		}
 
-		if (Input.GetKey ("1")){
+		if(gameState==0){
 			setActiveCamera(0);
 		}
-		else if (Input.GetKey ("2")){
-			setActiveCamera(1);	
+		else if(gameState==2){
+			setActiveCamera(1);
 		}
-		else if (Input.GetKey ("3")){
-			setActiveCamera(2);	
+
+		if(gameState==0 || gameState==1 || gameState==3	){
+
+			if (Input.GetKey ("1")){
+				setActiveCamera(0);
+			}
+			else if (Input.GetKey ("2")){
+				setActiveCamera(1);	
+			}
+			else if (Input.GetKey ("3")){
+				setActiveCamera(2);	
+			}
 		}
+
+		
 	}
 
 
@@ -86,7 +98,7 @@
 	}
 
 	public function OnGUI(){
-				if (Input.GetKey ("c")){
+		if (Input.GetKey ("c")){
 			activateNextCamera();
 		}
 	}
