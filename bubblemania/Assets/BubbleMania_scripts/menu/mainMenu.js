@@ -15,7 +15,7 @@
 		}
 		GUI.color = Color.green;
 		GUI.Label( Rect(Screen.width-100,Screen.height-60,280,280),"CopyRights to:");
-		GUI.color = Color.red;
+		GUI.color = Color.white;
 		GUI.Label( Rect(Screen.width-100,Screen.height-40,250,250),"Gasper Urh");
 		GUI.Label( Rect(Screen.width-100,Screen.height-20,270,270),"Tomaz Tomazic");
 	}

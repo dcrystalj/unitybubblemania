@@ -6,10 +6,10 @@
 
 	function OnGUI(){
 		GUI.color = Color.red;
-		GUI.Label(Rect(10,10,250,250),"level: "+GameC.lvl);
-		GUI.Label(Rect(10,30,250,250),"lives: "+GameC.lives);
-		GUI.Label(Rect(10,50,250,250),"money: "+GameC.money);
-		GUI.Label(Rect(10,70,250,250),"popped baloons: "+GameC.popped);
+		GUI.Label(Rect(10,10,250,250),"Level: "+GameC.lvl);
+		GUI.Label(Rect(10,30,250,250),"Lives: "+GameC.lives);
+		GUI.Label(Rect(10,50,250,250),"Money: "+GameC.money);
+		GUI.Label(Rect(10,70,250,250),"Popped baloons: "+GameC.popped);
 
 		//develop vars
 		GUI.Label(Rect(10,90,600,250),"enemies "+GameC.enemies +" spawnInterval "+GameC.spawnInterval+" bubblesInGame "+GameC.bubblesInGame+" areAllCreated "+GameC.areAllCreated+" gameState "+GameC.gameState);		
