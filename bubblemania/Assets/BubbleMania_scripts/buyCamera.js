@@ -1,8 +1,4 @@
-//-- "CameraFly.js" -- (from andrewnoske.com)
-//--
-//-- Add this simple script to your main camera to enable it to free fly in 3D using the mouse to rotate
-//-- left/right/up/down and the w,s,a,d keys (or arrow keys) to move forward/back/strafe-left/right.
-//-- The same code can be adapted to fly/control a plane too.
+
  
 var moveSpeed = 40.0;					// speed at which object moves
 var rotateSpeed = 10;				// speed at which object turns
