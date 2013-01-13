@@ -7,7 +7,7 @@
 var moveSpeed = 40.0;					// speed at which object moves
 var rotateSpeed = 10;				// speed at which object turns
  
-function Update () {
+function FixedUpdate () {
  
 	var moveZ = Input.GetAxis("Vertical")   * Time.deltaTime * moveSpeed;	// by default: [w]/[s] key for forward/back 
 	var moveX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;	// by default: [e]/[d] key for strafe right/left

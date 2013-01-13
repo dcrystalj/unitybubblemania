@@ -1,8 +1,6 @@
 
 	public static var spawn : GameObject;
-	public var cameras : Camera[];
-	
-
+	public var cameras : Camera[]; //0-main camera, 1-buy camera, 2-follow first baloon camera
 
 	public static var money : int;
 	public static var lvl : int;
@@ -17,7 +15,8 @@
 
 
 	// Use this for initialization
-	function Start () { 
+	function Start () {
+		speedm = 0.3; 
 		reset();	
 		//GameC.gameState=1;
 	}
@@ -39,12 +38,13 @@
 		else if (gameState == 0){
 			setActiveCamera(0);
 		}
+
 	}
 	
 	public static function reset(){
 		bubblesInGame=0;
 		gameState = 0;
-		money = 0;
+		money = 1000;
 		lvl = 1;
 		lives = 30;
 		popped = 0;

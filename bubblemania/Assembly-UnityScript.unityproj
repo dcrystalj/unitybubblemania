@@ -50,6 +50,7 @@
      <Compile Include="Assets\BubbleMania_scripts\Turret_Cannon.js" />
      <Compile Include="Assets\BubbleMania_scripts\autoDestroyParticles.js" />
      <Compile Include="Assets\BubbleMania_scripts\bubbleOnDestroy.js" />
+     <Compile Include="Assets\BubbleMania_scripts\buyCamera.js" />
      <Compile Include="Assets\BubbleMania_scripts\flyingCamera.js" />
      <Compile Include="Assets\BubbleMania_scripts\main\GameC.js" />
      <Compile Include="Assets\BubbleMania_scripts\main\GameText.js" />

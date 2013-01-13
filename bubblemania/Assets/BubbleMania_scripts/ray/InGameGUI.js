@@ -4,7 +4,11 @@ var placementLayerMask : LayerMask;
 private var originalMat: Material;
 private var lastHitObj : GameObject;
 
-var textur : Texture;
+var btnTextur1 : Texture;
+var btnTextur2 : Texture;
+var btnTextur1off : Texture;
+var btnTextur2off : Texture;
+
 var buildPanelOpen : boolean = false;
 
 var onColor: Color;
@@ -13,14 +17,12 @@ var allStructures : GameObject[];
 //var buildBtnGraphics : UISlicedSprite[];
 private var structureIndex: int=0;
 
-function start() {
-	//structureIndex =0;
+function Start() {
+	structureIndex =0;
 	//UpdateGUI();
 };
 
-function Update () {
-
-	Debug.Log("update");
+function FixedUpdate() {
 	if(buildPanelOpen){
 		var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		var hit : RaycastHit;
@@ -31,34 +33,35 @@ function Update () {
 			lastHitObj = hit.collider.gameObject;
 			originalMat = lastHitObj.renderer.material;
 			lastHitObj.renderer.material = hoverMat;
-			Debug.Log("rayhit");
 		}
 		else{
 			if(lastHitObj){
-				Debug.Log("rayhit nOT");
 				lastHitObj.renderer.material = originalMat;
 				lastHitObj = null;
 			}
-			Debug.Log("nc cist nc");
 		}
 
 		if(Input.GetMouseButtonDown(0) && lastHitObj){
-			Debug.Log("mouse down");
 			if(lastHitObj.tag == "placement_open"){
 				var newStructure : GameObject = Instantiate(allStructures[structureIndex],lastHitObj.transform.position,Quaternion.identity);
-				newStructure.transform.localEulerAngles.y = (Random.range(0,360));
+				newStructure.transform.localEulerAngles.y = Random.Range(0,359);
 				lastHitObj.tag = "placement_taken";
+
+				//minus money
+				if(structureIndex==0){
+					GameC.money-=500;
+				}
+				else if(structureIndex==1){
+					GameC.money-=1500;
+				}
 			}
 		}
 	}
+
+
+
 }
 
-//function UpdateGUI() {
-//	for(var theBtnGraphic:UISlicedSprite in buildBtnGraphics){
-//		theBtnGraphic.color = offColor;
-//	}
-//	buildBtnGraphics[structureIndex].color = onColor;
-//}
 function SetBuildChoice (btnObj: GameObject) {
 	var btnName : String = btnObj.name;
 
@@ -72,19 +75,56 @@ function SetBuildChoice (btnObj: GameObject) {
 }
 
 function OnGUI () {
+	//tower 1
+	if(GameC.gameState==2){
+		if(GameC.money<500){
+			GUI.enabled=false;
+			GUI.color = Color.yellow;
+			GUI.Button(Rect(5,Screen.height-120,120,120),btnTextur1off);
+		}
+		else{
+			GUI.enabled=true;
+			
+			GUI.color = Color.cyan;
+			if(GUI.Button(Rect(5,Screen.height-120,120,120),btnTextur1)){
+				structureIndex=0;
+				if(!buildPanelOpen){
+					ToggleBuildPanel();
+				}
+			}
+		}
 
-	GUI.color = Color.cyan;
-	if(GUI.Button(Rect(5,Screen.height-80,80,80),"a")){
-		structureIndex=0;
-		ToggleBuildPanel();
+		//tower 2
+		if(GameC.money<1500){
+			GUI.enabled=false;
+			GUI.color = Color.yellow;
+			GUI.Button(Rect(135,Screen.height-120,120,120),btnTextur2off);
+		}
+		else{
+			GUI.enabled=true;
+			
+
+			GUI.color = Color.cyan;
+			if(GUI.Button(Rect(135,Screen.height-120,120,120),btnTextur2)){
+				structureIndex=1;
+				if(!buildPanelOpen){
+					ToggleBuildPanel();
+				}
+			}
+		}
+
+
+		GUI.enabled=true;
+		GUI.color = Color.red;
+		if(GameC.gameState == 2){ 
+			if(GUI.Button( Rect(Screen.width/2-50,Screen.height-50,100,50),"finish")){
+				GameC.gameState=1;
+				if(buildPanelOpen){
+					ToggleBuildPanel();
+				}
+			}
+		}
 	}
-	GUI.color = Color.cyan;
-	if(GUI.Button(Rect(95,Screen.height-80,80,80),"b")){
-		structureIndex=1;
-		ToggleBuildPanel();
-	}
-	GUI.color = Color.cyan;
-//GUI.Button(Rect(185,Screen.height-80,80,80),btnTexture3);
 
 }
 
@@ -102,7 +142,7 @@ function ToggleBuildPanel () {
 		}
 
 		buildPanelOpen = true;
-	}
+	}	
 
 }
 
