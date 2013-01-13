@@ -50,9 +50,11 @@ function FixedUpdate() {
 				//minus money
 				if(structureIndex==0){
 					GameC.money-=500;
+					ToggleBuildPanel();
 				}
 				else if(structureIndex==1){
 					GameC.money-=1500;
+					ToggleBuildPanel();
 				}
 			}
 		}
@@ -84,7 +86,7 @@ function OnGUI () {
 		}
 		else{
 			GUI.enabled=true;
-			
+
 			GUI.color = Color.cyan;
 			if(GUI.Button(Rect(5,Screen.height-120,120,120),btnTextur1)){
 				structureIndex=0;
@@ -102,7 +104,7 @@ function OnGUI () {
 		}
 		else{
 			GUI.enabled=true;
-			
+
 
 			GUI.color = Color.cyan;
 			if(GUI.Button(Rect(135,Screen.height-120,120,120),btnTextur2)){

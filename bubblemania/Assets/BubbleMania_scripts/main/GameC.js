@@ -10,6 +10,7 @@
 	public static var spawnInterval: float;
 	public static var bubblesInGame: int; //how many bubbles have not been destroyed
 	public static var areAllCreated : boolean;
+	public static var currentSelectedCamera: int;
 
 	public static var gameState : int; //0=play, 1=lvl done, 2=buy towers, 3=gameOver
 
@@ -18,6 +19,7 @@
 	function Start () {
 		speedm = 0.3; 
 		reset();	
+		setActiveCamera(0);
 		//GameC.gameState=1;
 	}
 	
@@ -32,14 +34,18 @@
 			spawn=null;
 		}
 
-		if (gameState == 2){
-			setActiveCamera(1);
-		}
-		else if (gameState == 0){
+		if (Input.GetKey ("1")){
 			setActiveCamera(0);
 		}
-
+		else if (Input.GetKey ("2")){
+			setActiveCamera(1);	
+		}
+		else if (Input.GetKey ("3")){
+			setActiveCamera(2);	
+		}
 	}
+
+
 	
 	public static function reset(){
 		bubblesInGame=0;
@@ -68,4 +74,19 @@
 			c.camera.active=false;
 		}
 		cameras[i].camera.active=true;
+		currentSelectedCamera = i;
+	}
+
+	public function activateNextCamera(){
+		currentSelectedCamera++;
+		if(currentSelectedCamera>=cameras.length){
+			currentSelectedCamera=0;
+		}
+		setActiveCamera(currentSelectedCamera);
+	}
+
+	public function OnGUI(){
+				if (Input.GetKey ("c")){
+			activateNextCamera();
+		}
 	}
