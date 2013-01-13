@@ -56,6 +56,7 @@
      <Compile Include="Assets\BubbleMania_scripts\menu\gameOverMenu.js" />
      <Compile Include="Assets\BubbleMania_scripts\menu\mainMenu.js" />
      <Compile Include="Assets\BubbleMania_scripts\projectRocker.js" />
+     <Compile Include="Assets\BubbleMania_scripts\ray\InGameGUI.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />
