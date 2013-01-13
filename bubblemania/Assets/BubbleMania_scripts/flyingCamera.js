@@ -15,7 +15,7 @@ function FixedUpdate () {
  
  	//We rotate camera only when we hold down left mouse button
  	if(Input.GetMouseButton(0)){
- 		Screen.showCursor = false;	//We hide mouse cursor
+ 		//Screen.showCursor = false;	//We hide mouse cursor
 		var rotateAboutX = -Input.GetAxis("Mouse Y") * Time.deltaTime * rotateSpeed;		// mouse movement up/down
 		var rotateAboutY = Input.GetAxis("Mouse X")  * Time.deltaTime * rotateSpeed;		// mouse movement right/left
 		gameObject.transform.Rotate( rotateAboutX, rotateAboutY, 0 );				// rotate the object by this amount around the X and Y axes.

@@ -15,6 +15,9 @@ private var nextMoveTime:float;
 private var desiredRotation : Quaternion;
 private var aimError:float;
 private var sphereCollider : SphereCollider; 
+private var nextTarget : Transform;
+
+
 function Start () {
 	//sphereCollider= this.gameObject.GetComponent(SphereCollider);
 }
@@ -22,28 +25,29 @@ function Start () {
 function Update () {
 	//var object = this.gameObject;
 	//Handles.DrawWireDisc( gameObject.transform.position, Camera.mainCamera.transform.forward, sphereCollider.radius );
-	if(myTarget){
-		
+	if(myTarget){	
 		//turretBall.transform.LookAt(myTarget);
 		if(Time.time>=nextFireTime){
-			
 			FireProjectile();
 		}
 		if(Time.time >= nextMoveTime){
 			CalculateAimPosition(myTarget.position);
-			turretBall.rotation=Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime*turnSpeed);
-			
-		}
-		
-		
-		
+			turretBall.rotation=Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime*turnSpeed);	
+		}	
+	}
+	else if(nextTarget!=null){
+		myTarget=nextTarget;
+		nextTarget=null;
 	}
 
 }
 function OnTriggerEnter(other : Collider){
-	if(other.gameObject.tag=="bubble"){
+	if(myTarget==null && other.gameObject.tag=="bubble"){
 		nextFireTime=Time.time+(reloadTime*.5);
 		myTarget=other.gameObject.transform;
+	}
+	else if (nextTarget==null && other.gameObject.tag=="bubble"){
+		nextTarget=other.gameObject.transform;
 	}
 }
 //Izbrisemo tarco, ko gre element iz obsega

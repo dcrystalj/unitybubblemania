@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BubbleMania_scripts\BubblesSpawn.js" />
+     <Compile Include="Assets\BubbleMania_scripts\FinishedBubble.js" />
      <Compile Include="Assets\BubbleMania_scripts\Projectile_shoot.js" />
      <Compile Include="Assets\BubbleMania_scripts\RailGun.js" />
+     <Compile Include="Assets\BubbleMania_scripts\ShottenBubble.js" />
      <Compile Include="Assets\BubbleMania_scripts\Turret_Cannon.js" />
      <Compile Include="Assets\BubbleMania_scripts\autoDestroyParticles.js" />
      <Compile Include="Assets\BubbleMania_scripts\bubbleOnDestroy.js" />

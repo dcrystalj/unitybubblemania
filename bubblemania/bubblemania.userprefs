@@ -1,13 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BubbleMania_scripts\flyingCamera.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BubbleMania_scripts\Turret_Cannon.js">
     <Files>
+      <File FileName="Assets\BubbleMania_scripts\FinishedBubble.js" Line="14" Column="19" />
       <File FileName="Assets\BubbleMania_scripts\main\GameText.js" Line="1" Column="1" />
-      <File FileName="Assets\BubbleMania_scripts\menu\mainMenu.js" Line="21" Column="3" />
+      <File FileName="Assets\BubbleMania_scripts\menu\mainMenu.js" Line="11" Column="35" />
       <File FileName="Assets\BubbleMania_scripts\bubbleMove.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets (Mobile)\Scripts\Joystick.js" Line="1" Column="1" />
       <File FileName="Assets\BubbleMania_scripts\ray\InGameGUI.js" Line="1" Column="1" />
-      <File FileName="Assets\BubbleMania_scripts\flyingCamera.js" Line="24" Column="2" />
+      <File FileName="Assets\BubbleMania_scripts\flyingCamera.js" Line="18" Column="6" />
+      <File FileName="Assets\BubbleMania_scripts\ShottenBubble.js" Line="15" Column="3" />
+      <File FileName="Assets\BubbleMania_scripts\buyCamera.js" Line="1" Column="1" />
+      <File FileName="Assets\BubbleMania_scripts\bubbleOnDestroy.js" Line="1" Column="1" />
+      <File FileName="Assets\BubbleMania_scripts\main\GameC.js" Line="10" Column="20" />
+      <File FileName="Assets\BubbleMania_scripts\RailGun.js" Line="40" Column="19" />
+      <File FileName="Assets\BubbleMania_scripts\Turret_Cannon.js" Line="53" Column="35" />
+      <File FileName="Assets\BubbleMania_scripts\menu\gameOverMenu.js" Line="11" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

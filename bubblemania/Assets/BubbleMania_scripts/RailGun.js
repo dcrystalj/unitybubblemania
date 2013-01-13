@@ -16,6 +16,7 @@ private var nextFireTime:float;
 private var nextMoveTime:float;
 private var desiredRotation : Quaternion;
 private var aimError:float;
+private var nextTarget : Transform;
 
 function Start () {
 
@@ -31,15 +32,21 @@ function Update () {
 		pivot_Tilt.rotation = Quaternion.Lerp(pivot_Tilt.rotation,aim_Tilt.rotation,Time.deltaTime*turnSpeed);
 		
 		if(Time.time>=nextFireTime){
-			
 			FireProjectile();
 		}
 	}
+	else if(nextTarget!=null){
+		myTarget=nextTarget;
+		nextTarget=null;
+	}
 }
 function OnTriggerEnter(other : Collider){
-	if(other.gameObject.tag=="bubble"){
+	if(myTarget==null && other.gameObject.tag=="bubble"){
 		nextFireTime=Time.time+(reloadTime*.5);
 		myTarget=other.gameObject.transform;
+	}
+	else if (nextTarget==null && other.gameObject.tag=="bubble"){
+		nextTarget=other.gameObject.transform;
 	}
 }
 //Izbrisemo tarco, ko gre element iz obsega

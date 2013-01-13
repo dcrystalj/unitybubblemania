@@ -44,7 +44,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BubbleMania_scripts\FinishedBubble.cs" />
      <Compile Include="Assets\BubbleMania_scripts\SplineController\MathUtils.cs" />
      <Compile Include="Assets\BubbleMania_scripts\SplineController\SplineController.cs" />
      <Compile Include="Assets\BubbleMania_scripts\SplineController\SplineInterpolator.cs" />
